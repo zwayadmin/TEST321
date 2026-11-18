@@ -3,345 +3,44 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="覺知全人測評介紹：從六個成長面向與親子視角，看見孩子完整的樣子。">
+  <meta name="theme-color" content="#4f3c38">
+  <meta name="description" content="台灣展威文化教育｜覺知全人測評">
   <title>覺知全人測評｜台灣展威文化教育</title>
   <style>
-    :root {
-      --navy: #bd5d35;
-      --navy-2: #914224;
-      --orange: #e67b3f;
-      --orange-dark: #b94f27;
-      --cream: #fbf7ee;
-      --paper: #fffdf8;
-      --ink: #1f2d3d;
-      --muted: #637080;
-      --line: #dcd6c9;
-      --soft-blue: #eaf0f5;
-      --radius: 24px;
-      --shadow: 0 12px 34px rgba(20, 44, 75, .09);
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; overflow-x: hidden; }
-    body {
-      margin: 0;
-      overflow-x: hidden;
-      color: var(--ink);
-      background: var(--cream);
-      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
-      font-size: 17px;
-      line-height: 1.75;
-    }
-    img { display: block; max-width: 100%; }
-    a { color: inherit; }
-    button { font: inherit; }
-    .wrap { width: min(1140px, calc(100% - 48px)); margin-inline: auto; }
-    .section { padding: 104px 0; }
-    .section-kicker {
-      margin: 0 0 10px;
-      color: var(--orange-dark);
-      font-size: 14px;
-      font-weight: 800;
-      letter-spacing: .12em;
-    }
-    h1, h2, h3, p { margin-top: 0; }
-    h1, h2, h3 { color: var(--navy); line-height: 1.25; letter-spacing: -.02em; }
-    h1 { margin-bottom: 24px; font-size: clamp(46px, 4.7vw, 60px); }
-    .hero-title-line { display: block; white-space: nowrap; }
-    h2 { margin-bottom: 18px; font-size: clamp(32px, 4vw, 48px); }
-    h3 { margin-bottom: 10px; font-size: 21px; }
-    .section-head { max-width: 760px; margin-bottom: 48px; }
-    .section-head p { margin-bottom: 0; color: var(--muted); font-size: 19px; }
-
-    .btn {
-      display: inline-flex;
-      min-height: 50px;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      padding: 12px 22px;
-      border: 2px solid var(--orange);
-      border-radius: 999px;
-      color: #fff;
-      background: var(--orange);
-      font-weight: 800;
-      line-height: 1.35;
-      text-decoration: none;
-      transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
-    }
-    .btn:hover { transform: translateY(-2px); background: var(--orange-dark); border-color: var(--orange-dark); box-shadow: 0 8px 18px rgba(199, 93, 39, .22); }
-    .btn:focus-visible, .faq-question:focus-visible { outline: 3px solid rgba(231, 120, 60, .35); outline-offset: 3px; }
-    .btn-small { min-height: 42px; padding: 9px 17px; font-size: 15px; }
-    .btn-arrow::after { content: "↗"; font-size: 17px; }
-
-    .topbar {
-      position: relative;
-      z-index: 10;
-      border-bottom: 1px solid rgba(20, 44, 75, .12);
-      background: rgba(251, 247, 238, .94);
-    }
-    .topbar-inner { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .brand { color: var(--navy); font-size: 16px; font-weight: 900; text-decoration: none; }
-
-    .hero { padding: 78px 0 54px; }
-    .hero-grid { display: grid; grid-template-columns: .92fr 1.08fr; align-items: center; gap: 70px; }
-    .hero-eyebrow { color: var(--orange-dark); font-size: 15px; font-weight: 800; letter-spacing: .08em; }
-    .hero-lead { max-width: 610px; margin-bottom: 30px; color: #4e5d6d; font-size: clamp(18px, 2vw, 21px); }
-    .hero-media { position: relative; }
-    .hero-media::before {
-      content: "";
-      position: absolute;
-      inset: -22px 28px 22px -22px;
-      z-index: -1;
-      border-radius: 44px;
-      background: var(--soft-blue);
-    }
-    .hero-media img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 36px; box-shadow: var(--shadow); }
-
-    .stats { padding: 28px 0 66px; }
-    .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-block: 1px solid var(--line); }
-    .stat { padding: 30px 20px; text-align: center; }
-    .stat + .stat { border-left: 1px solid var(--line); }
-    .stat strong { display: block; color: var(--orange-dark); font-family: Georgia, serif; font-size: 42px; line-height: 1; }
-    .stat span { color: var(--navy); font-weight: 800; }
-
-    .dimensions { background: var(--paper); }
-    .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .dimension-card {
-      min-height: 250px;
-      padding: 30px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: #fff;
-      transition: transform .25s ease, box-shadow .25s ease;
-    }
-    .dimension-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
-    .icon {
-      width: 50px;
-      height: 50px;
-      display: grid;
-      place-items: center;
-      margin-bottom: 24px;
-      border-radius: 15px;
-      color: var(--orange-dark);
-      background: #fff1e8;
-    }
-    .icon svg { width: 27px; height: 27px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-    .dimension-card p { margin: 0; color: var(--muted); }
-
-    .process { background: var(--soft-blue); }
-    .steps { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 54px; }
-    .steps::before { content: ""; position: absolute; top: 29px; left: 17%; right: 17%; border-top: 2px dashed #9baabb; }
-    .step { position: relative; z-index: 1; text-align: center; }
-    .step-number { width: 60px; height: 60px; display: grid; place-items: center; margin: 0 auto 22px; border-radius: 50%; color: #fff; background: var(--navy); font-family: Georgia, serif; font-size: 24px; font-weight: 700; box-shadow: 0 0 0 9px var(--soft-blue); }
-    .step p { margin: 0 auto; max-width: 310px; color: var(--muted); }
-
-    .plans-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-    .plan-card { display: flex; min-width: 0; flex-direction: column; padding: 28px 24px 24px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper); }
-    .plan-label { color: var(--orange-dark); font-size: 14px; font-weight: 900; letter-spacing: .1em; }
-    .plan-card h3 { margin: 7px 0 18px; font-size: 23px; }
-    .plan-card ul { flex: 1; margin: 0 0 25px; padding-left: 1.3em; color: var(--muted); }
-    .plan-card li + li { margin-top: 4px; }
-    .price { margin: 0 0 18px; color: var(--navy); font-family: Georgia, serif; font-size: 29px; font-weight: 700; }
-    .plan-card .btn { width: 100%; font-size: 15px; }
-
-    .faq { background: var(--paper); }
-    .faq-list { max-width: 880px; margin: 0 auto; border-top: 1px solid var(--line); }
-    .faq-item { border-bottom: 1px solid var(--line); }
-    .faq-question { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 25px 4px; border: 0; color: var(--navy); background: transparent; cursor: pointer; text-align: left; font-size: 20px; font-weight: 850; }
-    .faq-plus { flex: 0 0 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; color: var(--orange-dark); background: #fff1e8; transition: transform .25s ease; }
-    .faq-question[aria-expanded="true"] .faq-plus { transform: rotate(45deg); }
-    .faq-answer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .3s ease; }
-    .faq-answer > div { overflow: hidden; }
-    .faq-answer p { margin: 0; padding: 0 54px 25px 4px; color: var(--muted); }
-    .faq-question[aria-expanded="true"] + .faq-answer { grid-template-rows: 1fr; }
-
-    .final-cta { padding: 92px 0; color: #fff; background: var(--navy); }
-    .cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 50px; }
-    .final-cta h2 { max-width: 690px; margin: 0; color: #fff; }
-    .final-cta .btn { flex: 0 0 auto; }
-
-    footer { padding: 38px 0 100px; color: rgba(255,255,255,.82); background: #0e2139; }
-    .footer-inner { display: flex; align-items: flex-start; justify-content: space-between; gap: 40px; }
-    .footer-brand { color: #fff; font-weight: 850; }
-    .contact { display: flex; flex-wrap: wrap; gap: 10px 22px; }
-    .contact a { text-decoration-color: rgba(255,255,255,.35); text-underline-offset: 4px; }
-
-    .mobile-cta { display: none; }
-    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
-    .reveal.is-visible { opacity: 1; transform: none; }
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .reveal { opacity: 1; transform: none; transition: none; } * { animation: none !important; } }
-
-    @media (max-width: 920px) {
-      .section { padding: 82px 0; }
-      .hero-grid { grid-template-columns: 1fr; gap: 50px; }
-      .hero-copy { max-width: 720px; }
-      .hero-media { max-width: 760px; }
-      .card-grid { grid-template-columns: repeat(2, 1fr); }
-      .plans-grid { grid-template-columns: repeat(2, 1fr); }
-      .cta-inner, .footer-inner { align-items: flex-start; flex-direction: column; }
-    }
-
-    @media (max-width: 620px) {
-      body { font-size: 16px; padding-bottom: 74px; }
-      .wrap { width: min(100% - 32px, 1140px); }
-      .section { padding: 68px 0; }
-      .topbar-inner { min-height: 68px; }
-      .brand { max-width: 210px; font-size: 14px; line-height: 1.4; }
-      .topbar .btn { display: none; }
-      .hero { padding-top: 52px; }
-      .hero-grid { gap: 38px; }
-      h1 { font-size: clamp(38px, 12vw, 52px); }
-      .hero-title-line { white-space: normal; }
-      h2 { font-size: 31px; }
-      .hero-lead { font-size: 18px; }
-      .hero-media::before { inset: -12px 16px 14px -12px; border-radius: 30px; }
-      .hero-media img { border-radius: 26px; }
-      .stats { padding-bottom: 46px; }
-      .stats-grid { grid-template-columns: 1fr; }
-      .stat + .stat { border-top: 1px solid var(--line); border-left: 0; }
-      .stat { display: flex; align-items: baseline; justify-content: center; gap: 9px; padding: 19px; }
-      .stat strong { font-size: 34px; }
-      .card-grid, .plans-grid { grid-template-columns: 1fr; }
-      .dimension-card { min-height: auto; padding: 26px; }
-      .steps { grid-template-columns: 1fr; gap: 38px; }
-      .steps::before { top: 30px; bottom: 30px; left: 29px; right: auto; border-top: 0; border-left: 2px dashed #9baabb; }
-      .step { display: grid; grid-template-columns: 60px 1fr; column-gap: 20px; text-align: left; }
-      .step-number { grid-row: 1 / 3; margin: 0; }
-      .step h3 { align-self: end; }
-      .step p { max-width: none; }
-      .plan-card { padding: 27px; }
-      .faq-question { padding-block: 21px; font-size: 18px; }
-      .faq-answer p { padding-right: 4px; }
-      .final-cta { padding: 72px 0; }
-      footer { padding-bottom: 38px; }
-      .contact { flex-direction: column; }
-      .mobile-cta { position: fixed; right: 0; bottom: 0; left: 0; z-index: 50; display: block; padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); border-top: 1px solid rgba(20,44,75,.15); background: rgba(255,253,248,.96); backdrop-filter: blur(10px); }
-      .mobile-cta .btn { width: 100%; min-height: 52px; }
-    }
+    :root{--cream:#f8f6f3;--paper:#fffdfb;--ink:#292624;--muted:#6b625e;--rust:#a3562f;--rust-dark:#814125;--clay:#b9aca2;--sand:#f1e8dc;--line:#e8e0d8;--shadow:0 18px 50px rgba(67,48,39,.09);--serif:"Iowan Old Style","Noto Serif TC","PMingLiU",serif;--sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--cream);font:16px/1.85 var(--sans);letter-spacing:.025em}a{color:inherit}.wrap{width:min(1160px,calc(100% - 64px));margin:auto}.eyebrow{font-size:12px;letter-spacing:.17em;color:var(--rust);font-weight:700}h1,h2,p{margin-top:0}h1,h2{font-family:var(--serif);font-weight:500;letter-spacing:.025em;line-height:1.4}h1{font-size:clamp(38px,5.3vw,66px);margin:20px 0 22px;color:#365a8a}h2{font-size:clamp(31px,4vw,46px);margin-bottom:18px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:15px;min-height:56px;padding:0 27px;background:var(--rust);border:1px solid var(--rust);border-radius:4px;color:white;text-decoration:none;font-weight:600;font-size:14px;letter-spacing:.08em;transition:background .25s,transform .25s,box-shadow .25s}.btn:hover{background:var(--rust-dark);transform:translateY(-3px);box-shadow:0 12px 24px #81412533}.btn:focus-visible{outline:3px solid #d8a180;outline-offset:4px}.arrow{font-size:19px;line-height:1}.hero{padding:48px 0 102px}.topline{display:flex;justify-content:space-between;align-items:center;padding-bottom:23px;border-bottom:1px solid var(--line)}.wordmark{font-size:12px;font-weight:700;letter-spacing:.1em}.wordmark span{color:var(--clay);padding:0 8px}.hero-grid{display:grid;grid-template-columns:.87fr 1.13fr;align-items:center;gap:8%;padding-top:80px}.hero-copy{padding:0 0 6px}.hero-copy .eyebrow{margin-bottom:15px}.hero-copy p{max-width:490px;color:var(--muted);font-size:17px;line-height:2.05;margin-bottom:31px}.hero-art{position:relative;min-height:420px;border-radius:3px;background:linear-gradient(145deg,#eee5d9,#e6d8ca);overflow:hidden}.hero-art img{display:block;width:100%;height:100%;min-height:420px;object-fit:cover}.hero-art:before,.hero-art:after{content:"";position:absolute;border:1px solid rgba(163,86,47,.22);border-radius:50%}.hero-art:before{width:330px;height:330px;right:14%;top:10%}.hero-art:after{width:190px;height:190px;right:31%;top:27%;background:rgba(255,253,251,.32)}.art-note{position:absolute;right:26px;bottom:21px;color:#70594d;font:italic 13px var(--serif);letter-spacing:.08em}.highlights{padding:24px 0 112px}.section-intro{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:33px}.section-intro h2{margin:0}.section-intro .eyebrow{margin-bottom:9px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{min-height:274px;padding:31px 30px;background:var(--paper);border:1px solid #eee7e0;border-radius:5px;box-shadow:0 8px 28px rgba(67,48,39,.055);transition:transform .3s,box-shadow .3s}.card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}.icon{width:44px;height:44px;margin-bottom:26px;color:var(--rust)}.icon svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round}.card h3{font-family:var(--serif);font-weight:500;font-size:23px;margin:0 0 12px}.card p{font-size:15px;line-height:1.9;color:var(--muted);margin:0}.closing{padding:73px 0 62px;background:var(--rust);color:#fff}.closing-inner{text-align:center}.closing h2{font-size:clamp(38px,5vw,58px);margin:0 0 27px;color:#fff}.closing .btn{background:transparent;border-color:rgba(255,255,255,.68)}.closing .btn:hover{background:#fff;color:var(--rust)}footer{background:var(--rust-dark);color:#f7eee9;padding:18px 0 22px;font-size:12px;letter-spacing:.08em}.contact{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:7px 16px}.contact a{text-decoration:none}.contact a:hover{text-decoration:underline;text-underline-offset:4px}.sep{opacity:.55}.reveal{opacity:0;transform:translateY(18px);transition:opacity .75s ease,transform .75s ease}.reveal.visible{opacity:1;transform:none}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}*,*:before,*:after{animation:none!important;transition-duration:.01ms!important}}
+    @media(max-width:850px){.wrap{width:min(100% - 44px,680px)}.hero-grid{grid-template-columns:1fr;gap:44px;padding-top:57px}.hero-art{min-height:370px}.hero-art img{min-height:370px}.section-intro{display:block}.section-intro h2{max-width:580px}.cards{gap:14px}.card{padding:26px 23px;min-height:290px}}
+    @media(max-width:600px){body{font-size:15px}.wrap{width:calc(100% - 38px)}.hero{padding:25px 0 74px}.topline{padding-bottom:16px}.wordmark{font-size:10px}.topline .btn{min-height:42px;padding:0 13px;font-size:11px;gap:6px}.hero-grid{padding-top:49px;gap:37px}.hero-copy p{font-size:16px;line-height:1.95}.hero-art{min-height:270px}.hero-art img{min-height:270px}.hero-art:before{width:250px;height:250px;right:7%;top:8%}.hero-art:after{width:145px;height:145px;right:25%;top:27%}.highlights{padding:10px 0 75px}.section-intro{margin-bottom:23px}.cards{grid-template-columns:1fr;gap:13px}.card{min-height:0;padding:23px 22px;display:grid;grid-template-columns:44px 1fr;column-gap:17px;align-items:start}.icon{grid-row:span 2;margin:3px 0 0}.card h3{font-size:21px;margin:0 0 4px}.card p{grid-column:2;font-size:14px}.closing{padding:61px 0 54px}.closing h2{font-size:40px}footer{padding:19px 0 23px}.contact{gap:4px 9px;font-size:11px}.sep:nth-of-type(2){display:none}}
   </style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="wrap topbar-inner">
-      <a class="brand" href="#top" aria-label="回到頁面頂端">台灣展威文化教育｜覺知全人測評</a>
-      <a class="btn btn-small btn-arrow" href="https://assessment-shop.z-way-edu.com/" target="_blank" rel="noopener noreferrer">前往測評官網</a>
-    </div>
-  </header>
-
-  <main id="top">
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div class="hero-copy reveal">
-          <p class="hero-eyebrow">從理解開始，陪伴才有方向</p>
-          <h1><span class="hero-title-line">先懂孩子的心，</span><span class="hero-title-line">再找對陪伴的方法。</span></h1>
-          <p class="hero-lead">我們知道孩子考了幾分，卻不一定真的看懂他。從孩子自評和家長觀察兩種視角，把「看不懂」變成可以理解、可以討論、可以行動。</p>
-          <a class="btn" href="https://assessment-shop.z-way-edu.com/" target="_blank" rel="noopener noreferrer">前往官網了解測評內容 <span aria-hidden="true">↗</span></a>
-        </div>
-        <div class="hero-media reveal">
-          <img src="hero.png" alt="家長陪孩子坐在一起安心談心的溫暖插畫" width="1536" height="1024">
-        </div>
-      </div>
-    </section>
-
-    <section class="stats" aria-label="測評重點數字">
-      <div class="wrap stats-grid reveal">
-        <div class="stat"><strong>6</strong><span>個成長面向</span></div>
-        <div class="stat"><strong>2</strong><span>種親子視角</span></div>
-        <div class="stat"><strong>一年 2</strong><span>次追蹤</span></div>
-      </div>
-    </section>
-
-    <section class="section dimensions" id="dimensions">
+  <main>
+    <section class="hero" id="top">
       <div class="wrap">
-        <div class="section-head reveal">
-          <p class="section-kicker">六個成長面向</p>
-          <h2>不只看分數，更看見完整的孩子。</h2>
-        </div>
-        <div class="card-grid">
-          <article class="dimension-card reveal"><div class="icon"><svg viewBox="0 0 24 24"><path d="M9.5 18h5M10 22h4M8.2 15.4A7 7 0 1 1 15.8 15.4c-.9.7-1.3 1.2-1.3 2.1h-5c0-.9-.4-1.4-1.3-2.1Z"/></svg></div><h3>心智光譜</h3><p>孩子怎麼開始一件事、遇到問題怎麼處理？</p></article>
-          <article class="dimension-card reveal"><div class="icon"><svg viewBox="0 0 24 24"><path d="m12 3 2.3 4.7L19.5 9l-3.8 3.7.9 5.3-4.6-2.5L7.4 18l.9-5.3L4.5 9l5.2-1.3L12 3Z"/></svg></div><h3>多元能力傾向</h3><p>他有哪些容易發揮的能力與潛在優勢？</p></article>
-          <article class="dimension-card reveal"><div class="icon"><svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11v16H6.5A2.5 2.5 0 0 0 4 21.5v-16ZM20 5.5A2.5 2.5 0 0 0 17.5 3H13v16h4.5a2.5 2.5 0 0 1 2.5 2.5v-16Z"/></svg></div><h3>覺知學習力</h3><p>他如何專注、規劃、堅持與調整學習？</p></article>
-          <article class="dimension-card reveal"><div class="icon"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/></svg></div><h3>SEL 社會情緒學習</h3><p>他能不能理解情緒、與人相處並做決定？</p></article>
-          <article class="dimension-card reveal"><div class="icon"><svg viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg></div><h3>4C 核心素養</h3><p>他如何運用批判思考、創造力、溝通與協作解決問題？</p></article>
-          <article class="dimension-card reveal"><div class="icon"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>親子教養互動</h3><p>您的陪伴方式，和孩子感受到的一樣嗎？</p></article>
+        <div class="topline"><div class="wordmark">台灣展威文化教育<span>｜</span>覺知全人測評</div><a class="btn" href="https://assessment-shop.z-way-edu.com/" target="_blank" rel="noopener noreferrer">了解測評內容 <span class="arrow" aria-hidden="true">↗</span></a></div>
+        <div class="hero-grid">
+          <div class="hero-copy reveal"><div class="eyebrow">台灣展威文化教育｜覺知全人測評</div><h1>先懂孩子的心，<br>再找對陪伴的方法。</h1><p>我們知道孩子考了幾分，卻不一定真的看懂他。從孩子自評和家長觀察兩種視角，把「看不懂」變成可以理解、可以行動。</p><a class="btn" href="https://assessment-shop.z-way-edu.com/" target="_blank" rel="noopener noreferrer">了解測評內容 <span class="arrow" aria-hidden="true">↗</span></a></div>
+          <div class="hero-art reveal"><img src="images/封面.png" alt="家長和孩子坐在一起討論事情，孩子露出安心的笑容"></div>
         </div>
       </div>
     </section>
-
-    <section class="section process">
-      <div class="wrap">
-        <div class="section-head reveal"><p class="section-kicker">怎麼進行</p><h2>從作答到陪伴，每一步都有下文。</h2></div>
-        <div class="steps">
-          <article class="step reveal"><div class="step-number">1</div><h3>親子分別作答</h3><p>孩子說自己的感受，家長記錄日常觀察，可以分段完成。</p></article>
-          <article class="step reveal"><div class="step-number">2</div><h3>一起閱讀報告</h3><p>對照六個面向及親子視角，看見相同與不同。</p></article>
-          <article class="step reveal"><div class="step-number">3</div><h3>帶回日常試一試</h3><p>選一個可行的陪伴建議，在生活中觀察，再和孩子討論。</p></article>
+    <section class="highlights">
+      <div class="wrap"><div class="section-intro reveal"><div><div class="eyebrow">覺知全人測評</div><h2>看見孩子的不同面向</h2></div></div>
+        <div class="cards">
+          <article class="card reveal"><div class="icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 5v38M7.5 14.5l33 19M7.5 33.5l33-19"/><circle cx="24" cy="24" r="17"/><circle cx="24" cy="24" r="8"/></svg></div><h3>6 個成長面向</h3><p>從心智、能力、學習、情緒、素養到親子互動，看見完整的孩子。</p></article>
+          <article class="card reveal"><div class="icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M8 10h20a7 7 0 0 1 7 7v7a7 7 0 0 1-7 7h-8l-8 6v-6h-4a7 7 0 0 1-7-7v-7a7 7 0 0 1 7-7Z"/><path d="M22 14h11a7 7 0 0 1 7 7v8a7 7 0 0 1-7 7h-2v5l-7-5"/></svg></div><h3>2 種親子視角</h3><p>孩子說自己的感受，家長記錄日常觀察，看見相同與不同。</p></article>
+          <article class="card reveal"><div class="icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M5 18 24 7l19 11-19 11L5 18Z"/><path d="M12 23v10c7 7 17 7 24 0V23M43 18v13"/></svg></div><h3>4 個成長階段</h3><p>幼兒、國小、國中、高中，從現在的階段開始。</p></article>
         </div>
       </div>
     </section>
-
-    <section class="section plans">
-      <div class="wrap">
-        <div class="section-head reveal"><p class="section-kicker">四個成長階段</p><h2>從現在的階段開始，選擇適合孩子的理解方式。</h2></div>
-        <div class="plans-grid">
-          <article class="plan-card reveal"><span class="plan-label">幼兒</span><h3>幼兒啟航測評</h3><ul><li>早期特質</li><li>感官學習</li><li>情緒表達</li><li>親子互動</li></ul><p class="price">4,200 元</p><a class="btn btn-arrow" href="https://assessment-shop.z-way-edu.com/" target="_blank" rel="noopener noreferrer">到官網看詳情</a></article>
-          <article class="plan-card reveal"><span class="plan-label">國小</span><h3>國小扎根測評</h3><ul><li>人格特質</li><li>學習特質</li><li>情緒能力</li><li>優勢能力</li></ul><p class="price">4,800 元</p><a class="btn btn-arrow" href="https://assessment-shop.z-way-edu.com/" target="_blank" rel="noopener noreferrer">到官網看詳情</a></article>
-          <article class="plan-card reveal"><span class="plan-label">國中</span><h3>國中自我探索測評</h3><ul><li>自我管理</li><li>學習動力</li><li>挫折容忍力</li><li>人際適應</li></ul><p class="price">5,200 元</p><a class="btn btn-arrow" href="https://assessment-shop.z-way-edu.com/" target="_blank" rel="noopener noreferrer">到官網看詳情</a></article>
-          <article class="plan-card reveal"><span class="plan-label">高中</span><h3>高中學職涯定向測評</h3><ul><li>自我認同</li><li>學群探索</li><li>工作價值觀</li><li>生涯自我效能</li></ul><p class="price">5,800 元</p><a class="btn btn-arrow" href="https://assessment-shop.z-way-edu.com/" target="_blank" rel="noopener noreferrer">到官網看詳情</a></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section faq">
-      <div class="wrap">
-        <div class="section-head reveal"><p class="section-kicker">常見問題</p><h2>開始之前，家長常問的三件事。</h2></div>
-        <div class="faq-list reveal">
-          <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false"><span>孩子與家長都需要作答嗎？</span><span class="faq-plus" aria-hidden="true">＋</span></button><div class="faq-answer"><div><p>國小到高中由孩子和家長分別作答；幼兒階段由家長依日常觀察作答。</p></div></div></div>
-          <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false"><span>一定要一次做完嗎？</span><span class="faq-plus" aria-hidden="true">＋</span></button><div class="faq-answer"><div><p>不需要，可以分段完成，登入後接續作答進度。</p></div></div></div>
-          <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false"><span>測評能診斷問題或預測升學嗎？</span><span class="faq-plus" aria-hidden="true">＋</span></button><div class="faq-answer"><div><p>這是教育觀察與陪伴工具，無法取代醫療或心理診斷，也不提供排名或升學預測。</p></div></div></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="final-cta">
-      <div class="wrap cta-inner reveal">
-        <h2>先懂孩子的心，<br>再找對陪伴的方法。</h2>
-        <a class="btn btn-arrow" href="https://assessment-shop.z-way-edu.com/" target="_blank" rel="noopener noreferrer">前往官網了解測評</a>
-      </div>
-    </section>
+    <section class="closing"><div class="wrap closing-inner reveal"><h2>先懂心，再懂教。</h2><a class="btn" href="https://assessment-shop.z-way-edu.com/" target="_blank" rel="noopener noreferrer">前往官網了解測評 <span class="arrow" aria-hidden="true">↗</span></a></div></section>
   </main>
-
-  <footer>
-    <div class="wrap footer-inner">
-      <div class="footer-brand">先懂心、再懂教｜台灣展威文化教育</div>
-      <div class="contact"><a href="tel:072693525">電話 07-2693525</a><span>LINE @zwayedu</span><a href="mailto:contact@z-way-edu.com">contact@z-way-edu.com</a></div>
-    </div>
-  </footer>
-
-  <div class="mobile-cta"><a class="btn" href="https://assessment-shop.z-way-edu.com/" target="_blank" rel="noopener noreferrer">前往官網了解測評內容 <span aria-hidden="true">↗</span></a></div>
-
+  <footer><div class="wrap contact"><a href="tel:072693525">電話 07-2693525</a><span class="sep">｜</span><span>LINE @zwayedu</span><span class="sep">｜</span><a href="mailto:contact@z-way-edu.com">contact@z-way-edu.com</a></div></footer>
   <script>
-    document.querySelectorAll('.faq-question').forEach((button) => {
-      button.addEventListener('click', () => {
-        const open = button.getAttribute('aria-expanded') === 'true';
-        button.setAttribute('aria-expanded', String(!open));
-      });
-    });
-
-    const reveals = document.querySelectorAll('.reveal');
-    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: .12 });
-      reveals.forEach((item) => observer.observe(item));
-    } else {
-      reveals.forEach((item) => item.classList.add('is-visible'));
-    }
+    const targets=document.querySelectorAll('.reveal');
+    if('IntersectionObserver'in window&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});targets.forEach(target=>observer.observe(target))}else{targets.forEach(target=>target.classList.add('visible'))}
   </script>
 </body>
 </html>
+
+
